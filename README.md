@@ -1,40 +1,24 @@
-# Your Cool Amplenote Plugin
+# Amplenote Note Reminder Plugin
 
-In this section you can provide some details about the [Amplenote plugin](https://www.amplenote.com/help/developing_amplenote_plugins) 
-that this repo will implement.
+This plugin allows you to easily create a Task to review the current note in a certain number of days. It will add the Task to Note chosen in the prompt (defaulting to the one from the settings, if set) and set the Start Date for the Task to be a set number of days in the future.
 
-## Installation
+After installation, to use select Note Reminder from the Note menu in the upper right corner of the note.This will prompt for the Note to add the Task to (will default to the one from the settings if none is chosen) and the number of the days in the future for the Start Date. 
 
-1. Clone this repo. `git clone git@github.com:alloy-org/plugin-template.git`
-2. Copy its contents to a directory with the name of your plugin. `cp -r plugin-template my-cool-plugin`
-3. `cd my-cool-plugin`
-4. Install node and npm with your package manager of choice. `brew install node` or `apt install nodejs` 
-5. Run `npm install` to install the packages (jest, fetch (for Jest)).  
-6. Set up your repo as the remote origin. `git remote set-url origin git@github.com:my-org/my-cool-plugin.git`
-7. Push your repo to GitHub. `git push`
-8. 🎉
-Optional
-9. If you are going to use any secret keys, put them in `.env.example`, then copy that to `.env` 
-   and fill in whatever environment variables you need
+If no Default Days is set the plugin will currently default to 7 days.
+
+## Known Issues
+- Task content Note links are not converted to an actual link but can easily be made one by clicking on it
+- Note for Task field in prompt is not populated with the Default Task Note as value doesn't work for note types
+
+## Development
+
+Nothing of real note, just straight Javascript in the `lib/plugin.js` file.
 
 ## Testing
 
 Run `NODE_OPTIONS=--experimental-vm-modules npm test` to run the tests.
 
 If it complains about jsdom being absent, run `npm install -D jest-environment-jsdom` and try again.
-
-### With JetBrains
-
-If you are using a JetBrains IDE (Webstorm, Rubymine, anything that speaks Javascript), you can get an 
-excellent debugging environment to run your tests.
-
-[Read how to set up tests with this environment in JetBrains IDEs](https://public.amplenote.com/GPTbAGiRYddSCLtuTXGS1tSo).
-
-### Run tests continuously as modifying the plugin
-
-```bash
-NODE_OPTIONS=--experimental-vm-modules npm run test -- --watch
-```
 
 ## Technologies used to help with this project
 
